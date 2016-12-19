@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(rgdal)\nlibrary(readr)\nlibrary(plyr)\nlibrary(dplyr)\n## Get files\ndownload.file(url = \"http://www2.census.gov/geo/tiger/GENZ2015/shp/cb_2015_us_state_500k.zip\", destfile = \"data-raw/census-shapefiles.zip\")\nunzip(zipfile = \"data-raw/census-shapefiles.zip\", exdir = \"data-raw/census-shapefiles\")\n\n## Read shapefiles\nfull_us_shapefiles <- readOGR(dsn = \"data-raw/census-shapefiles/\", layer = \"cb_2015_us_state_500k\", verbose = F)\nfull_us_shapefiles$STATEFP <- as.character(full_us_shapefiles$STATEFP)\nfull_us_shapefiles$STATEFP <- as.numeric(full_us_shapefiles$STATEFP)\n\n## Load FIPS codes, from https://www2.census.gov/geo/docs/reference/state.txt and annotated by hand\nfips_codes <- read_csv(\"data-raw/US-FIPS-Codes.csv\")\nmake_us_contiguous <- function(spatial_polgyon= NA){\n  contiguous_fips_codes <- fips_codes[fips_codes$contiguous.united.states == TRUE,]$fips.code\n  contiguous <- full_us_shapefiles[spatial_polgyon$STATEFP %in% contiguous_fips_codes,]\n  # Drop unnecessary levels\n  contiguous@data <- droplevels(contiguous@data)\n  contiguous\n}\ncontiguous_us_shapefiles <- make_us_contiguous(full_us_shapefiles)\ncontiguous_fips_codes <- fips_codes[fips_codes$contiguous.united.states == TRUE,]\ncontiguous_us_shapefiles$state.name <- mapvalues(contiguous_us_shapefiles$STATEFP,\n                                                 from = contiguous_fips_codes$fips.code,\n                                                 to = contiguous_fips_codes$state.name)\n## tidy dataframe\ncolnames(contiguous_us_shapefiles@data) <- tolower(colnames(contiguous_us_shapefiles@data))\ncontiguous_us_shapefiles@data <- contiguous_us_shapefiles@data %>%\n  rename(\n    state.fips = statefp,\n    state.ns = statens,\n    geo.id = geoid,\n    a.land = aland,\n    a.water = awater,\n    aff.geo.id = affgeoid,\n    state.short.name = stusps\n  )\n## Export data\nsave(contiguous_us_shapefiles, file = \"data/contiguous_us_shapefiles.rdata\")\n## Remove files\nfile.remove(\"data-raw/census-shapefiles.zip\")\nunlink(\"data-raw/census-shapefiles\", recursive = T)\n\n\n\n",
+    "created" : 1482143340090.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "738429627",
+    "id" : "604CCADA",
+    "lastKnownWriteTime" : 1482159342,
+    "last_content_update" : 1482159342123,
+    "path" : "~/Github/statesRcontiguous/data-raw/make-contiguous.R",
+    "project_path" : "data-raw/make-contiguous.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

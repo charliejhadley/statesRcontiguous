@@ -1,0 +1,6 @@
+"0","library(dplyr)"
+"0","contiguous_fips_codes <- fips_codes %>%"
+"0","  filter(contiguous.united.states == TRUE) %>%"
+"0","  select(fips.code) %>%"
+"0","  unlist(use.names = FALSE)"
+"0","made_contiguous_manually <- usa_all[usa_all$state.fips %in% contiguous_fips_codes, ]"
