@@ -2,4 +2,4 @@
 
 export(get_us_shape_files)
 export(make_us_contiguous)
-export(make_us_shapefiles)
+export(make_us_spdf)

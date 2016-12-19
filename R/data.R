@@ -12,7 +12,7 @@
 #'   \item{a.water}{Area of state that is water}
 #' }
 #' @source \url{https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html}
-"contiguous_us_shapefiles"
+"contiguous_us_spdf"
 
 #' FIPS Codes
 #'

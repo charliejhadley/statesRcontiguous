@@ -38,7 +38,8 @@ contiguous_us_shapefiles@data <- contiguous_us_shapefiles@data %>%
     state.short.name = stusps
   )
 ## Export data
-save(contiguous_us_shapefiles, file = "data/contiguous_us_shapefiles.rdata")
+contiguous_us_spdf <- contiguous_us_shapefiles
+save(contiguous_us_spdf, file = "data/contiguous_us_spdf.rdata")
 ## Remove files
 file.remove("data-raw/census-shapefiles.zip")
 unlink("data-raw/census-shapefiles", recursive = T)

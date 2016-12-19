@@ -62,9 +62,9 @@ make_us_contiguous <- function(us_spdf) {
   contiguous_us_spdf
 }
 
-#' make_us_shapefiles
+#' make_us_spdf
 #'
-#' \code{make_us_shapefiles} returns shape files from census.gov
+#' \code{make_us_spdf} returns shape files from census.gov
 #'
 #' @param resolution Resolution of the shapefiles, may only be "500k", "5m", or "20m". If \code{download.shapefiles=FALSE} these must already be downloaded. Default to "500k"
 #' @param year Year for which the shapefiles should be requested, may only be 2013, 2014, or 2015. If \code{download.shapefiles=FALSE} these must already be downloaded. Default to 2015
@@ -73,7 +73,7 @@ make_us_contiguous <- function(us_spdf) {
 #' @param contiguous.only If TRUE the returned SPDF will only contain States in the contiguous United States. Default to TRUE.
 #'
 #' @export
-make_us_shapefiles <- function(shapefiles.path = "shapefiles/",
+make_us_spdf <- function(shapefiles.path = "shapefiles/",
                                year = "2015",
                                resolution = "500k",
                                contiguous.only = TRUE,
