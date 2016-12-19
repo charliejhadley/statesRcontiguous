@@ -6,5 +6,7 @@
 ~%2FGithub%2FstatesRcontiguous%2Fdata-raw%2FUS-FIPS-Codes.csv="407639F1"
 ~%2FGithub%2FstatesRcontiguous%2Fdata-raw%2Ffips-codes.R="7C0993EB"
 ~%2FGithub%2FstatesRcontiguous%2Fdata-raw%2Fmake-contiguous.R="64322C0D"
+~%2FGithub%2FstatesRcontiguous%2Fshapefiles%2Fcb_2015_us_state_500k.shp.ea.iso.xml="59E8F267"
+~%2FGithub%2FstatesRcontiguous%2Fvignettes%2Fget_shape_files.R="BC700AC2"
 ~%2FGithub%2FstatesRcontiguous%2Fvignettes%2Fget_shape_files.Rmd="DC463ABD"
 ~%2FGithub%2FstatesRcontiguous%2Fvignettes%2Fmy-vignette.Rmd="B3F80AB4"

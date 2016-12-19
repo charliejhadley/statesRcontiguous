@@ -24,8 +24,8 @@ get_us_shape_files()
 # Make shapefiles
 
 ```{r}
-usa_contiguous <- make_us_shapefiles(year = "2015", resolution = "500k")
-usa_all <- make_us_shapefiles(year = "2015", resolution = "500k", contiguous.only = FALSE)
+usa_contiguous <- make_us_spdf(year = "2015", resolution = "500k")
+usa_all <- make_us_spdf(year = "2015", resolution = "500k", contiguous.only = FALSE)
 ```
 
 ## Make contiguous
@@ -46,6 +46,12 @@ contiguous_fips_codes <- fips_codes %>%
   unlist(use.names = FALSE)
 
 made_contiguous_manually <- usa_all[usa_all$state.fips %in% contiguous_fips_codes, ]
+```
+
+Delete the shapefiles folder, for cleanliness.
+
+```{r}
+unlink("shapefiles", recursive = T)
 ```
 
 
