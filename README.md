@@ -16,7 +16,7 @@ leaflet(contiguous_us_spdf) %>%
 This package is not currently on CRAN, to install use:
 
 ```r
-devtools::install_github("ox-it/oidnChaRts")
+devtools::install_github("martinjhnhadley/statesRcontiguous")
 ```
 
 # Usage
