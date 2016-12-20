@@ -1,0 +1,57 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(statesRcontiguous)
+```
+
+# Download shapefiles
+
+```{r}
+get_us_shape_files()
+```
+
+
+# Make shapefiles
+
+```{r}
+usa_contiguous <- make_us_spdf(year = "2015", resolution = "500k")
+usa_all <- make_us_spdf(year = "2015", resolution = "500k", contiguous.only = FALSE)
+```
+
+## Make contiguous
+
+The SPDF can easily be made contiguous as follows:
+
+```{r}
+made_contiguous <- make_us_contiguous(usa_all)
+```
+
+Of course, this could be achieved easily using the following code:
+
+```{r}
+library(dplyr)
+contiguous_fips_codes <- fips_codes %>%
+  filter(contiguous.united.states == TRUE) %>%
+  select(fips.code) %>%
+  unlist(use.names = FALSE)
+
+made_contiguous_manually <- usa_all[usa_all$state.fips %in% contiguous_fips_codes, ]
+```
+
+Delete the shapefiles folder, for cleanliness.
+
+```{r}
+unlink("shapefiles", recursive = T)
+```
+
+
