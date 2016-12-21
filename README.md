@@ -1,8 +1,10 @@
 # statesRcontiguous?
 
+<<<<<<< HEAD
 [![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous)
 
 Need shapefiles for the United States of America for mapping? Do you ***really*** only want to see the contiguous United States of America[<sup>1</sup>](#Maps-of-places-that-are not-the-US)?
+
 
 ```r
 library(statesRcontiguous)
