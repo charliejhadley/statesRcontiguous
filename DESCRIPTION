@@ -17,6 +17,5 @@ Imports:
     magrittr,
     rgdal,
     readr,
-    plyr,
     dplyr
 
