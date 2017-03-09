@@ -66,11 +66,10 @@ combined_cd_details <-
   ))
 ## Update shapefile
 contiguous_congressional_districts@data <- as.data.frame(combined_cd_details)
-contiguous_congressional_districts_spdf <- contiguous_congressional_districts
-
 ## Drop those elements of @data where no cd114
 contiguous_congressional_districts <- contiguous_congressional_districts[!is.na(contiguous_congressional_districts$cd114fp),]
-
+## Rename
+contiguous_congressional_districts_spdf <- contiguous_congressional_districts
 ## Export data
 save(contiguous_congressional_districts_spdf, file = "data/contiguous_congressional_districts_spdf.rdata")
 ## Remove files
