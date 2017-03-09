@@ -55,11 +55,11 @@ make_us_contiguous <- function(us_spdf) {
 
   contiguous_fips_codes <-
     statesRcontiguous::fips_codes[statesRcontiguous::fips_codes$contiguous.united.states == TRUE, ]$fips.code
-  contiguous_us_spdf <-
+  us_spdf <-
     us_spdf[us_spdf$state.fips %in% contiguous_fips_codes, ]
   # Drop unnecessary levels
-  contiguous_us_spdf@data <- droplevels(contiguous_us_spdf@data)
-  contiguous_us_spdf
+  us_spdf@data <- droplevels(us_spdf@data)
+  us_spdf
 }
 
 #' make_us_spdf

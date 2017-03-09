@@ -13,6 +13,11 @@ leaflet(contiguous_us_spdf) %>%
   addPolygons()
 ```
 ![http://i.imgur.com/RUkUaU6.png](http://i.imgur.com/RUkUaU6.png)
+# Where's the data from?
+
+- Congressional Districts: [https://catalog.data.gov/dataset/tiger-line-shapefile-2015-nation-u-s-114th-congressional-district-national](https://catalog.data.gov/dataset/tiger-line-shapefile-2015-nation-u-s-114th-congressional-district-national)
+
+- State Boundaries: [https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html](https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html)
 
 # Installation
 

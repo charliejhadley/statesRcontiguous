@@ -14,6 +14,27 @@
 #' @source \url{https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html}
 "contiguous_us_spdf"
 
+#' Contiguous US Congressional Districts 2014
+#'
+#' A SpatialPolygonsDataFrame representing the congressional districts of the contiguous United States of America with 500k = 1:500,000 resolution, from www.census.gov.
+#'
+#' @format A large SpatialPolygonsDataFrame (433 elements, 10.9Mb), an internal data.frame called "data" is available with the following information:
+#' \describe{
+#'   \item{state.fp}{STATEFP, State FIP code}
+#'   \item{cd114fp}{Unknown identifier from Census}
+#'   \item{affgeoid}{American Fact Finder ID}
+#'   \item{geoid}{Unknown identifier from Census}
+#'   \item{lsad}{Unknown identifier from Census}
+#'   \item{cdsessn}{Unknown identifier from Census}
+#'   \item{a.land}{Area of state that is land}
+#'   \item{a.water}{Area of state that is water}
+#'   \item{state.name}{Name of state district belongs to}
+#'   \item{namelsad}{Name of congressional district}
+#'   \item{name}{Canonical name of district}
+#' }
+#' @source \url{http://www2.census.gov/geo/tiger/GENZ2014/shp/cb_2014_us_cd114_500k.zip}
+"contiguous_congressional_districts_spdf"
+
 #' FIPS Codes
 #'
 #' A DataFrame containing the FIPS codes for states, taken from https://www.census.gov/geo/reference/codes/cou.html. Whether a State is included in the contiguous United States or not was entered by hand, raise issues in the issue tracker if there are any disagreements.
