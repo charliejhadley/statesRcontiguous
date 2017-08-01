@@ -1,51 +1,86 @@
-#' Contiguous US Shapefiles
+#' Shapefiles detailing the Congressional Districts of the USA, designed for subsetting to the contiguous USA.
 #'
-#' A SpatialPolygonsDataFrame representing the contiguous United States of America with 500k = 1:500,000 resolution, from www.census.gov.
+#' An "sf" "data.frame" representing congressional districts of the United States of America with 20m = 1:20,000,000 resolution, from www.census.gov.
 #'
-#' @format A large SpatialPolygonsDataFrame (49 elements, 3.7Mb), an internal data.frame called "data" is available with the following information:
+#' @format Simple feature collection with 444 features and 12 fields
 #' \describe{
-#'   \item{state.fp}{STATEFP, State FIP code}
-#'   \item{state.ns}{GNIS ID for State}
+#'   \item{state.fips}{State FIP code}
+#'   \item{district.name}{Congressional District name}
 #'   \item{state.short.name}{Two-character short name for state}
 #'   \item{state.name}{State name}
-#'   \item{a.land}{Area of state that is land}
-#'   \item{a.water}{Area of state that is water}
-#' }
-#' @source \url{https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html}
-"contiguous_us_spdf"
-
-#' Contiguous US Congressional Districts 2014
-#'
-#' A SpatialPolygonsDataFrame representing the congressional districts of the contiguous United States of America with 500k = 1:500,000 resolution, from www.census.gov.
-#'
-#' @format A large SpatialPolygonsDataFrame (433 elements, 10.9Mb), an internal data.frame called "data" is available with the following information:
-#' \describe{
-#'   \item{state.fp}{STATEFP, State FIP code}
-#'   \item{cd114fp}{Unknown identifier from Census}
-#'   \item{affgeoid}{American Fact Finder ID}
+#'   \item{state.ns}{GNIS ID for State}
+#'   \item{aff.geo.id}{American Fact Finder Geo ID}
 #'   \item{geoid}{Unknown identifier from Census}
-#'   \item{lsad}{Unknown identifier from Census}
-#'   \item{cdsessn}{Unknown identifier from Census}
-#'   \item{a.land}{Area of state that is land}
-#'   \item{a.water}{Area of state that is water}
-#'   \item{state.name}{Name of state district belongs to}
-#'   \item{namelsad}{Name of congressional district}
-#'   \item{name}{Canonical name of district}
+#'   \item{congressional.session}{Congressional session (all identical)}
+#'   \item{contiguous.united.states}{Is a member of the contiguous US? TRUE/FALSE}
+#'   \item{is.state}{Is this Congressional District part of a recognised State? TRUE/ FALSE}
+#'   \item{state.region}{Region the parent state belongs to}
+#'   \item{state.divison}{Division the parent state belongs to}
+#'   \item{geometry}{MULTIPOLYGON, defines the border of the Congressional District}
 #' }
-#' @source \url{http://www2.census.gov/geo/tiger/GENZ2014/shp/cb_2014_us_cd114_500k.zip}
-"contiguous_congressional_districts_spdf"
+#' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip}
+"shp_all_us_congressional_districts"
 
-#' FIPS Codes
+#' Shapefiles detailing the Counties of the USA, designed for subsetting to the contiguous USA.
 #'
-#' A DataFrame containing the FIPS codes for states, taken from https://www.census.gov/geo/reference/codes/cou.html. Whether a State is included in the contiguous United States or not was entered by hand, raise issues in the issue tracker if there are any disagreements.
+#' An "sf" "data.frame" representing counties of the United States of America with 20m = 1:20,000,000 resolution, from www.census.gov.
 #'
-#' @format A DataFrame (57 rows, 5 columns) with the following data:
+#' @format Simple feature collection with 3233 features and 14 fields
 #' \describe{
-#'   \item{fips.code}{State FIP code}
+#'   \item{county.name}{County name}
+#'   \item{county.name.abbreviated}{Abbreviated or commong county name}
+#'   \item{county.fp}{County unique identifier}
+#'   \item{county.ns}{GNIS IDfor county}
+#'   \item{state.fips}{State FIP code}
 #'   \item{state.short.name}{Two-character short name for state}
 #'   \item{state.name}{State name}
 #'   \item{state.ns}{GNIS ID for State}
-#'   \item{contiguous.united.states}{Member of contiguous United States or note (TRUE or FALSE)}
+#'   \item{aff.geo.id}{American Fact Finder Geo ID}
+#'   \item{geoid}{Unknown identifier from Census}
+#'   \item{congressional.session}{Congressional session (all identical)}
+#'   \item{contiguous.united.states}{Is a member of the contiguous US? TRUE/FALSE}
+#'   \item{is.state}{Is this Congressional District part of a recognised State? TRUE/ FALSE}
+#'   \item{state.region}{Region the parent state belongs to}
+#'   \item{state.divison}{Division the parent state belongs to}
+#'   \item{geometry}{MULTIPOLYGON, defines the border of the Congressional District}
 #' }
-#' @source \url{https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html}
-"fips_codes"
+#' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip}
+"shp_all_us_counties"
+
+#' Shapefiles detailing the states of the USA, designed for subsetting to the contiguous USA.
+#'
+#' An "sf" "data.frame" representing counties of the United States of America with 20m = 1:20,000,000 resolution, from www.census.gov.
+#'
+#' @format Simple feature collection with 56 features and 14 fields
+#' \describe{
+#'   \item{state.fips}{State FIP code}
+#'   \item{state.short.name}{Two-character short name for state}
+#'   \item{state.name}{State name}
+#'   \item{state.ns}{GNIS ID for State}
+#'   \item{a.land}{Area of state that is land, m2}
+#'   \item{a.water}{Area of state that is water, m2}
+#'   \item{aff.geo.id}{American Fact Finder Geo ID}
+#'   \item{geoid}{Unknown identifier from Census}
+#'   \item{congressional.session}{Congressional session (all identical)}
+#'   \item{contiguous.united.states}{Is a member of the contiguous US? TRUE/FALSE}
+#'   \item{is.state}{Is this Congressional District part of a recognised State? TRUE/ FALSE}
+#'   \item{state.region}{Region the parent state belongs to}
+#'   \item{state.divison}{Division the parent state belongs to}
+#'   \item{geometry}{MULTIPOLYGON, defines the border of the Congressional District}
+#' }
+#' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip}
+"shp_all_us_states"
+
+#' Details of the shapefiles included in this package.
+#'
+#' A tibble containing the url, year and description of all shapefiles used to create the datasets included in this package
+#'
+#' @format A tibble containing 6 rows and 3 variables.
+#' \describe{
+#'     \item{description}{What is this shapefile used for?}
+#'     \item{year}{Year of observation (i.e. congressional districts for 2016)}
+#'     \item{url}{URL for the shapefile zip file}
+#' }
+#' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip}
+"shapefile_details"
+
