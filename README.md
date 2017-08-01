@@ -1,82 +1,84 @@
-# statesRcontiguous?
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+statesRcontiguous?
+==================
 
 [![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous)
 
-Need shapefiles for the United States of America for mapping? Do you ***really*** only want to see the contiguous United States of America[<sup>1</sup>](#Maps-of-places-that-are not-the-US)?
+statesRcontiguous provides a tiny (small enough for CRAN) package containing the following shapefiles for the United States of America:
 
+-   States (last updated in 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip>)
+-   Congressional District Boundaries (last updated in 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip>)
+-   Counties (last updated in 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip>)
 
-```r
+All shapefiles include a column called `contiguous.united.states` which allows the dataset to be restricted to the contiguous US very simply:
+
+``` r
 library(statesRcontiguous)
 library(leaflet)
-leaflet(contiguous_us_spdf) %>%
+shp_contiguous_states <- shp_all_us_states %>%
+  filter(contiguous.united.states)
+leaflet(shp_contiguous_states) %>%
   addTiles() %>%
   addPolygons()
 ```
-![http://i.imgur.com/RUkUaU6.png](http://i.imgur.com/RUkUaU6.png)
-# Where's the data from?
 
-- Congressional Districts: [https://catalog.data.gov/dataset/tiger-line-shapefile-2015-nation-u-s-114th-congressional-district-national](https://catalog.data.gov/dataset/tiger-line-shapefile-2015-nation-u-s-114th-congressional-district-national)
+Installation
+============
 
-- State Boundaries: [https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html](https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html)
+This package is currently only available Github, and can be installed as follows:
 
-# Installation
-
-This package is not currently on CRAN, to install use:
-
-```r
+``` r
 devtools::install_github("martinjhnhadley/statesRcontiguous")
 ```
 
-# Usage
+Should I use this package?
+==========================
 
-Programmatically download the shapefiles from census.gov with `get_us_shape_files` into the shapefiles.path directory:
+This package provides **only** the three shapefiles (states, congressional districts, counties) included in the package. It is intended for where you have a reproducible need for shapefiles for the (contiguous) US and don't want to have to download the files on the fly.
 
-```r
-get_us_shape_files(
-	resolution = "500k",
-	year = "2015",
-	zip.path = "shapefiles.zip",
-	shapefiles.path = "shapefiles/",
-	delete.zip = TRUE
-)
+You might prefer to use the \[tigris\])(<https://github.com/walkerke/tigris>) package which is available on CRAN, and provides tools to download any of the shapefiles from TIGER.
+
+You might also want to investigate the
+
+So why does this exist?
+-----------------------
+
+This package was designed for the University of Oxford's [Interactive Data Network](http://idn.it.ox.ac.uk) which exists to provide a visualisation service for academics at Oxford, using Shiny. The Shiny apps developed by researchers are not allowed to contain data files, instead data must be loaded from external DOI-issuing repositories like [Figshare](www.figshare.com).
+
+By providing a small utility package with these shapefiles in, researchers can easily create choropleth of the US.
+
+Data Source
+===========
+
+The actual shapefiles (borders) included in this package are from the US Census website, do note that they'd been augmented with additional data from other sources which are detailed in the following table
+
+``` r
+shapefile_details
+#> # A tibble: 6 x 3
+#>                             description  year
+#>                                   <chr> <int>
+#> 1 Details about congressional districts  2016
+#> 2                Details about counties  2016
+#> 3                  Details about states  2016
+#> 4 Shapefile for congressional districts  2016
+#> 5                Shapefile for counties  2016
+#> 6                  Shapefile for states  2016
+#> # ... with 1 more variables: url <chr>
+# A tibble: 6 x 3
+#                             description  year                                                                      url
+#                                   <chr> <int>                                                                    <chr>
+# 1 Details about congressional districts  2016      https://www2.census.gov/geo/tiger/TIGER2016/CD/tl_2016_us_cd115.zip
+# 2                Details about counties  2016 https://www2.census.gov/geo/tiger/TIGER2016/COUNTY/tl_2016_us_county.zip
+# 3                  Details about states  2016   https://www2.census.gov/geo/tiger/TIGER2016/STATE/tl_2016_us_state.zip
+# 4 Shapefile for congressional districts  2016   http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip
+# 5                Shapefile for counties  2016  http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip
+# 6                  Shapefile for states  2016   http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip
 ```
 
-Download AND import the shapefiles into a SpatialDataFrame containing only the contiguous states of the United States:
+License
+=======
 
-```r
-make_us_spdf(
-	shapefiles.path = "shapefiles/",
-	year = "2015",
-	resolution = "500k",
-	contiguous.only = TRUE,
-	download.shapefiles = TRUE
-)
-```
-
-The options shown above are the default options for `make_us_spdf` and are provided within the package via `contiguous_us_spdf`
-
-```r
-library(statesRcontiguous)
-library(leaflet)
-leaflet(contiguous_us_spdf) %>%
-  addTiles() %>%
-  addPolygons()
-```
-
-# Maps of places that are not the US
-
-<sup>1</sup> If you don't have a genuine need to show America, for instance you're writing a tutorial on mapping in R, ask: why do you want to show America? There *are* collections of shapefiles for other countries/supra-national entities, some places to look include: [http://gadm.org/](http://gadm.org/), [datapages.com](http://datapages.com/gis-map-publishing-program/gis-open-files/global-framework/global-heat-flow-database/shapefiles-list), [thematicmapping.com](http://thematicmapping.org/downloads/world_borders.php) and there's good information about shapefiles on [openstreetmap.org](http://wiki.openstreetmap.org/wiki/Shapefiles)
-
-This library serves a useful<sup>2</sup> purpose, obtaining an explicit SpatialPolgygonsDataFrame, and I aim to build a few other tongue in cheek collections of shapefiles as R libraries:
-
-- islesRkingdom: Shapefiles for Republic of Ireland, Northern Ireland, Scotland, England, Wales, Cornwall, Channel Islands, Orkney Islands and every mix there of. Great Britian, British Isles, United Kingdom, Wangland and more.
-
-<sup>2</sup> Hopefully, also see https://twitter.com/martinjhnhadley/status/811148917689745408
-
-# License
-
-This package includes a copy of the following shapefiles from the US Census Bureau; http://www2.census.gov/geo/tiger/GENZ2015/shp/cb_2015_us_state_500k.zip. All shapefiles provided by the US Census Bureau are TIGER/Line shapefiles and are offered to the public free of charge, see [TIGER/Line Shapefil Technical Documentation](http://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2016/TGRSHP2016_TechDoc.pdf) for details.
+This package includes shapefiles from the US Census Bureau. All shapefiles provided by the US Census Bureau are TIGER/Line shapefiles and are offered to the public free of charge, see [TIGER/Line Shapefil Technical Documentation](http://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2016/TGRSHP2016_TechDoc.pdf) for details.
 
 This package itself is made available under the MIT license.
-
-
