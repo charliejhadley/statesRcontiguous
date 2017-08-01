@@ -39,8 +39,6 @@ This package provides **only** the three shapefiles (states, congressional distr
 
 You might prefer to use the [tigris](https://github.com/walkerke/tigris) package which is available on CRAN, and provides tools to download any of the shapefiles from TIGER.
 
-You might also want to investigate the
-
 So why does this exist?
 -----------------------
 

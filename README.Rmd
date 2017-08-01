@@ -52,8 +52,6 @@ This package provides **only** the three shapefiles (states, congressional distr
 
 You might prefer to use the [tigris](https://github.com/walkerke/tigris) package which is available on CRAN, and provides tools to download any of the shapefiles from TIGER.
 
-You might also want to investigate the 
-
 ## So why does this exist?
 
 This package was designed for the University of Oxford's [Interactive Data Network](http://idn.it.ox.ac.uk) which exists to provide a visualisation service for academics at Oxford, using Shiny. The Shiny apps developed by researchers are not allowed to contain data files, instead data must be loaded from external DOI-issuing repositories like [Figshare](www.figshare.com).

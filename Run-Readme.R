@@ -1,4 +1,5 @@
 library("tidyverse")
+library("statesRcontiguous")
 states_data_file <- read_csv("data-raw/current_states_shapefile_url.csv")
 congressional_districts_data_file <- read_csv("data-raw/current_congressional_districts_shapefile_url.csv")
 counties_data_file <- read_csv("data-raw/current_counties_shapefile_url.csv")
