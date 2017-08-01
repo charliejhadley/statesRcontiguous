@@ -1,0 +1,57 @@
+state.region,state.division,state.name,state.ns
+South,South Atlantic,West Virginia,01779805
+South,South Atlantic,Florida,00294478
+Midwest,East North Central,Illinois,01779784
+Midwest,West North Central,Minnesota,00662849
+South,South Atlantic,Maryland,01714934
+Northeast,New England,Rhode Island,01219835
+West,Mountain,Idaho,01779783
+Northeast,New England,New Hampshire,01779794
+South,South Atlantic,North Carolina,01027616
+Northeast,New England,Vermont,01779802
+Northeast,New England,Connecticut,01779780
+South,South Atlantic,Delaware,01779781
+West,Mountain,New Mexico,00897535
+West,Pacific,California,01779778
+Northeast,Middle Atlantic,New Jersey,01779795
+Midwest,East North Central,Wisconsin,01779806
+West,Pacific,Oregon,01155107
+Midwest,West North Central,Nebraska,01779792
+Northeast,Middle Atlantic,Pennsylvania,01779798
+West,Pacific,Washington,01779804
+South,West South Central,Louisiana,01629543
+South,South Atlantic,Georgia,01705317
+South,East South Central,Alabama,01779775
+West,Mountain,Utah,01455989
+Midwest,East North Central,Ohio,01085497
+South,West South Central,Texas,01779801
+West,Mountain,Colorado,01779779
+South,South Atlantic,South Carolina,01779799
+South,West South Central,Oklahoma,01102857
+South,East South Central,Tennessee,01325873
+West,Mountain,Wyoming,01779807
+West,Pacific,Hawaii,01779782
+Midwest,West North Central,North Dakota,01779797
+South,East South Central,Kentucky,01779786
+Other,Other,United States Virgin Islands,01802710
+Other,Other,Commonwealth of the Northern Mariana Islands,01779809
+Other,Other,Guam,01802705
+Northeast,New England,Maine,01779787
+Northeast,Middle Atlantic,New York,01779796
+West,Mountain,Nevada,01779793
+West,Pacific,Alaska,01785533
+Other,Other,American Samoa,01802701
+Midwest,East North Central,Michigan,01779789
+South,West South Central,Arkansas,00068085
+South,East South Central,Mississippi,01779790
+Midwest,West North Central,Missouri,01779791
+West,Mountain,Montana,00767982
+Midwest,West North Central,Kansas,00481813
+Midwest,East North Central,Indiana,00448508
+Other,Other,Puerto Rico,01779808
+Midwest,West North Central,South Dakota,01785534
+Northeast,New England,Massachusetts,00606926
+South,South Atlantic,Virginia,01779803
+South,South Atlantic,District of Columbia,01702382
+Midwest,West North Central,Iowa,01779785
+West,Mountain,Arizona,01779777
