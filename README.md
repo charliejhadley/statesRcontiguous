@@ -37,7 +37,7 @@ Should I use this package?
 
 This package provides **only** the three shapefiles (states, congressional districts, counties) included in the package. It is intended for where you have a reproducible need for shapefiles for the (contiguous) US and don't want to have to download the files on the fly.
 
-You might prefer to use the \[tigris\])(<https://github.com/walkerke/tigris>) package which is available on CRAN, and provides tools to download any of the shapefiles from TIGER.
+You might prefer to use the [tigris](https://github.com/walkerke/tigris) package which is available on CRAN, and provides tools to download any of the shapefiles from TIGER.
 
 You might also want to investigate the
 
@@ -65,15 +65,6 @@ shapefile_details
 #> 5                Shapefile for counties  2016
 #> 6                  Shapefile for states  2016
 #> # ... with 1 more variables: url <chr>
-# A tibble: 6 x 3
-#                             description  year                                                                      url
-#                                   <chr> <int>                                                                    <chr>
-# 1 Details about congressional districts  2016      https://www2.census.gov/geo/tiger/TIGER2016/CD/tl_2016_us_cd115.zip
-# 2                Details about counties  2016 https://www2.census.gov/geo/tiger/TIGER2016/COUNTY/tl_2016_us_county.zip
-# 3                  Details about states  2016   https://www2.census.gov/geo/tiger/TIGER2016/STATE/tl_2016_us_state.zip
-# 4 Shapefile for congressional districts  2016   http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip
-# 5                Shapefile for counties  2016  http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip
-# 6                  Shapefile for states  2016   http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip
 ```
 
 License
