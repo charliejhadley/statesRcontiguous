@@ -1,9 +1,16 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+# Borrowed liberally from https://github.com/r-spatial/sf/blob/master/.travis.yml
 
-language: R
+language: r
+
+r:
+  - release
+  - devel
+  - oldrel
+
 cache: packages
 
-# Borrowed liberally from https://github.com/r-spatial/sf/blob/master/.travis.yml
+dist: trusty
 
 sudo: required
 
@@ -18,18 +25,14 @@ before_install:
   - (cd /tmp/postgis-2.3.2 ; ./configure; make; sudo make install)
   - # activate liblwgeom:
   - sudo ldconfig
-  - # create postgis databases:
-  - sudo service postgresql restart
-  - createdb postgis
-  - psql -d postgis -c "CREATE EXTENSION postgis;"
-  - psql -d postgis -c "GRANT CREATE ON DATABASE postgis TO travis"
-  - createdb empty
-  - psql -d empty -c "CREATE EXTENSION postgis;"
+
+#  - # create postgis databases:
+#  - sudo service postgresql restart
+#  - createdb postgis
+#  - psql -d postgis -c "CREATE EXTENSION postgis;"
+#  - psql -d postgis -c "GRANT CREATE ON DATABASE postgis TO travis"
+#  - createdb empty
+#  - psql -d empty -c "CREATE EXTENSION postgis;"
+
 
 warnings_are_errors: true
-
-after_success:
-  - dropdb postgis
-  - createdb postgis
-  - psql -d postgis -c "CREATE EXTENSION postgis;"
-  - psql -d postgis -c "GRANT CREATE ON DATABASE postgis TO travis"
