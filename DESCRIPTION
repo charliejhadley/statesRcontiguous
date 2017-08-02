@@ -1,7 +1,7 @@
 Package: statesRcontiguous
 Type: Package
 Title: Shapefiles For The Contiguous United States of America (Using census.gov.uk)
-Version: 0.1.1.9000
+Version: 0.1.0.9000
 Author: person("Martin", "Hadley", email = "martinjohnhadley@gmail.com", role = c("aut", "cre"))
 Maintainer: Martin Hadley <martin.hadley@it.ox.ac.uk>
 Description: Data package containing shapefiles for the US that may easily be restricted to only
@@ -15,8 +15,16 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 License: MIT + file LICENSE
-LazyData: true
+VignetteBuilder:
+    utils,
+    knitr
+Depends:
+    sf
 Imports:
-    sf,
     magrittr,
     dplyr
+Suggests: knitr,
+    rmarkdown,
+    tidyverse,
+    leaflet,
+    covr
