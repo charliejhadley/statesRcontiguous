@@ -21,15 +21,6 @@ The `sf` objects contain a column called `contiguous.united.states` which allows
 ```r
 library("statesRcontiguous")
 library("tidyverse")
-#> Loading tidyverse: ggplot2
-#> Loading tidyverse: tibble
-#> Loading tidyverse: tidyr
-#> Loading tidyverse: readr
-#> Loading tidyverse: purrr
-#> Loading tidyverse: dplyr
-#> Conflicts with tidy packages ----------------------------------------------
-#> filter(): dplyr, stats
-#> lag():    dplyr, stats
 library("leaflet")
 shp_contiguous_us_congressional_districts <- shp_all_us_congressional_districts %>%
   filter(contiguous.united.states)
@@ -37,11 +28,7 @@ shp_contiguous_us_congressional_districts %>%
   leaflet() %>%
   addTiles() %>%
   addPolygons(weight = 1)
-#> Warning: sf layer has inconsistent datum (+proj=longlat +datum=NAD83 +no_defs).
-#> Need '+proj=longlat +datum=WGS84'
 ```
-
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 # Where are the shapefiles from?
 
