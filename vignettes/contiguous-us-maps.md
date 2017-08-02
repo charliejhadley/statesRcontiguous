@@ -1,7 +1,7 @@
 ---
 title: "Contiguous US Maps"
 author: "Martin John Hadley"
-date: "`r Sys.Date()`"
+date: "2017-08-02"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::knitr}
@@ -9,10 +9,7 @@ vignette: >
   %\usepackage[UTF-8]{inputenc}
 ---
 
-```{r, echo = FALSE, message = FALSE}
-knitr::opts_chunk$set(collapse = T, comment = "#>")
-library(statesRcontiguous)
-```
+
 
 # Visualising the contiguous United States
 
@@ -20,9 +17,19 @@ This package provides three different shapefiles for the United States of Americ
 
 The `sf` objects contain a column called `contiguous.united.states` which allows us to restrict ourselves to only the contiguous US. This is how we might visualise the congressional districts of the contiguous US with leaflet:
 
-```{r}
+
+```r
 library("statesRcontiguous")
 library("tidyverse")
+#> Loading tidyverse: ggplot2
+#> Loading tidyverse: tibble
+#> Loading tidyverse: tidyr
+#> Loading tidyverse: readr
+#> Loading tidyverse: purrr
+#> Loading tidyverse: dplyr
+#> Conflicts with tidy packages ----------------------------------------------
+#> filter(): dplyr, stats
+#> lag():    dplyr, stats
 library("leaflet")
 shp_contiguous_us_congressional_districts <- shp_all_us_congressional_districts %>%
   filter(contiguous.united.states)
@@ -30,7 +37,11 @@ shp_contiguous_us_congressional_districts %>%
   leaflet() %>%
   addTiles() %>%
   addPolygons(weight = 1)
+#> Warning: sf layer has inconsistent datum (+proj=longlat +datum=NAD83 +no_defs).
+#> Need '+proj=longlat +datum=WGS84'
 ```
+
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 # Where are the shapefiles from?
 
@@ -38,8 +49,20 @@ All of the shapefiles in this package are from the US Census website - https://w
 
 The explicit urls for the shapefiles are available here:
 
-```{r}
+
+```r
 knitr::kable(shapefile_details)
 ```
+
+
+
+|description                           | year|url                                                                      |
+|:-------------------------------------|----:|:------------------------------------------------------------------------|
+|Details about congressional districts | 2016|https://www2.census.gov/geo/tiger/TIGER2016/CD/tl_2016_us_cd115.zip      |
+|Details about counties                | 2016|https://www2.census.gov/geo/tiger/TIGER2016/COUNTY/tl_2016_us_county.zip |
+|Details about states                  | 2016|https://www2.census.gov/geo/tiger/TIGER2016/STATE/tl_2016_us_state.zip   |
+|Shapefile for congressional districts | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip   |
+|Shapefile for counties                | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip  |
+|Shapefile for states                  | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip   |
 
 
