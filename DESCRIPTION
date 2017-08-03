@@ -3,7 +3,7 @@ Type: Package
 Title: Shapefiles For The Contiguous United States of America (Using census.gov.uk)
 Version: 0.1.0.9000
 Author: person("Martin", "Hadley", email = "martinjohnhadley@gmail.com", role = c("aut", "cre"))
-Maintainer: Martin Hadley <martin.hadley@it.ox.ac.uk>
+Maintainer: Martin Hadley <martinjohnhadley@gmail.com>
 Description: Data package containing shapefiles for the US that may easily be restricted to only
     the contiguous US. Shapefiles are provided for; states, congressional districts and counties.
     All shapefiles have the resolution of 1:20,000,000 and are from 
@@ -11,6 +11,8 @@ Description: Data package containing shapefiles for the US that may easily be re
     additional information from TIGER, see shapefile_details for details.
     Please note, this package is explicitly designed to fit all shapefiles within one CRAN-hosted
     package. You will want to use the tigris package for programmatic access to TIGER.
+URL: https://github.com/martinjhnhadley/statesRcontiguous
+BugReports: https://github.com/martinjhnhadley/statesRcontiguous/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
@@ -19,6 +21,7 @@ VignetteBuilder:
     utils,
     knitr
 Depends:
+    R (>= 3.1.2),
     sf
 Imports:
     magrittr,
@@ -28,3 +31,4 @@ Suggests: knitr,
     tidyverse,
     leaflet,
     covr
+License: MIT + file LICENSE
