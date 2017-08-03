@@ -2,6 +2,7 @@
 #'
 #' An "sf" "data.frame" representing congressional districts of the United States of America with 20m = 1:20,000,000 resolution, from www.census.gov.
 #'
+#' @import sf
 #'
 #' @format Simple feature collection with 444 features and 12 fields
 #' \describe{
