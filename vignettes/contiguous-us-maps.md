@@ -1,7 +1,7 @@
 ---
 title: "Contiguous US Maps"
 author: "Martin John Hadley"
-date: "2017-08-02"
+date: "2017-08-03"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::knitr}
