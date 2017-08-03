@@ -4,3 +4,6 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^codecov\.yml$
+^Run-Readme\.R$
+^cran-comments\.md$
+^data-raw$
