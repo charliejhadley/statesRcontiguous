@@ -20,6 +20,12 @@
 #'   \item{state.divison}{Division the parent state belongs to}
 #'   \item{geometry}{MULTIPOLYGON, defines the border of the Congressional District}
 #' }
+#'
+#' @examples
+#' ## Filter out only congressional districts from the contiguous US
+#' library("dplyr")
+#' shp_contiguous_us_congressional_districts <- shp_all_us_congressional_districts %>%
+#'  filter(contiguous.united.states)
 #' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip}
 "shp_all_us_congressional_districts"
 
@@ -46,6 +52,13 @@
 #'   \item{state.divison}{Division the parent state belongs to}
 #'   \item{geometry}{MULTIPOLYGON, defines the border of the Congressional District}
 #' }
+#'
+#' @examples
+#' ## Filter out only counties from the contiguous US
+#' library("dplyr")
+#' shp_contiguous_us_counties <- shp_all_us_counties %>%
+#'  filter(contiguous.united.states)
+#'
 #' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip}
 "shp_all_us_counties"
 
@@ -70,6 +83,13 @@
 #'   \item{state.divison}{Division the parent state belongs to}
 #'   \item{geometry}{MULTIPOLYGON, defines the border of the Congressional District}
 #' }
+#'
+#' @examples
+#' ## Filter out only states from the contiguous US
+#' library("dplyr")
+#' shp_contiguous_us_states <- shp_all_us_states %>%
+#'  filter(contiguous.united.states)
+#'
 #' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip}
 "shp_all_us_states"
 

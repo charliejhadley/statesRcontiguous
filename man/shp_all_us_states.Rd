@@ -30,4 +30,11 @@ shp_all_us_states
 \description{
 An "sf" "data.frame" representing counties of the United States of America with 20m = 1:20,000,000 resolution, from www.census.gov.
 }
+\examples{
+## Filter out only states from the contiguous US
+library("dplyr")
+shp_contiguous_us_states <- shp_all_us_states \%>\%
+ filter(contiguous.united.states)
+
+}
 \keyword{datasets}
