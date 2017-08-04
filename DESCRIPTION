@@ -10,7 +10,7 @@ Description: Data package containing shapefiles for the US that may easily be re
     <https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html> but are augmented with
     additional information from TIGER, see shapefile_details for details.
     Please note, this package is explicitly designed to fit all shapefiles within one CRAN-hosted
-    package. You will want to use the tigris package for programmatic access to TIGER.
+    package. You will want to use the 'tigris' package for programmatic access to TIGER.
 URL: https://github.com/martinjhnhadley/statesRcontiguous
 BugReports: https://github.com/martinjhnhadley/statesRcontiguous/issues
 Encoding: UTF-8
