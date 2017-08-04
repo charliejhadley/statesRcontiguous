@@ -1,6 +1,6 @@
 Package: statesRcontiguous
 Type: Package
-Title: Shapefiles For The Contiguous United States of America (Using census.gov.uk)
+Title: Shapefiles for the Contiguous United States of America (Using Census.gov.uk)
 Version: 0.1.0.9000
 Author: person("Martin", "Hadley", email = "martinjohnhadley@gmail.com", role = c("aut", "cre"))
 Maintainer: Martin Hadley <martinjohnhadley@gmail.com>
