@@ -1,3 +1,10 @@
+## Resubmission
+This is a resubmission, apologies for forgetting resubmission notes previously. In this version I have:
+
+* Removed references to TIGER from the DESCRIPTION as it's a tautological description of the US Census' shapefile products. Instead, users of the package are told the package contains shapefiles that are generated from the combination of multiple shapefiles products from the US Census.
+
+* Added single quotes around the package variable 'shapefile_details' in the DESCRIPTION
+
 ## Release summary
 
 This is the first release of a package designed to provide a self-contained set of CRAN-hosted shapefiles for the following properties of the US; states, congressional districts, counties. Data processing is self-contained within the /data-raw directory and a parameterised README.Rmd file auto includes the details of the latest version of the shapefiles in the readme. Note that the shapefiles have been augmented with data from additional sources to make it easier for users to subset the shapefiles to concern only the contiguous US.
