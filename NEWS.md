@@ -1,4 +1,11 @@
-# tilegramsR 0.1.0
+# statesRcontiguous 0.1.0.9000
+
+## Development Features
+
+* Adding additional examples
+* Added additional badges
+
+# statesRcontiguous 0.1.0
 
 ## New Features
 
