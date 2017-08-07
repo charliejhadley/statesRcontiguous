@@ -3,7 +3,7 @@
 statesRcontiguous?
 ==================
 
-[![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous)
+[![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/statesRcontiguous)](https://cran.r-project.org/package=statesRcontiguous) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 
 statesRcontiguous provides a tiny (small enough for CRAN) package containing the following shapefiles for the United States of America:
 
