@@ -26,7 +26,13 @@ leaflet(shp_contiguous_states) %>%
 Installation
 ============
 
-This package is currently only available Github, and can be installed as follows:
+Install from CRAN as follows:
+
+``` r
+install.packages("statesRcontiguous")
+```
+
+To install the development build of statesRcontiguous, please use the following:
 
 ``` r
 devtools::install_github("martinjhnhadley/statesRcontiguous")
