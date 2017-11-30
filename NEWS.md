@@ -1,9 +1,10 @@
-# statesRcontiguous 0.1.0.9000
+# statesRcontiguous 0.1.1.9000
 
 ## Development Features
 
 * Adding additional examples
 * Added additional badges
+* Package now depends on tibble
 
 # statesRcontiguous 0.1.0
 
