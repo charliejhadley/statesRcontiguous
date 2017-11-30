@@ -23,7 +23,8 @@ VignetteBuilder:
     knitr
 Depends:
     R (>= 3.1.2),
-    sf
+    sf,
+    tibble
 Imports:
     magrittr,
     dplyr
