@@ -3,13 +3,13 @@
 statesRcontiguous?
 ==================
 
-[![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/statesRcontiguous)](https://cran.r-project.org/package=statesRcontiguous) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/statesRcontiguous)](https://cran.r-project.org/package=statesRcontiguous) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![](http://cranlogs.r-pkg.org/badges/statesRcontiguous)](http://cran.rstudio.com/web/packages/statesRcontiguous/index.html)
 
 statesRcontiguous provides a tiny (small enough for CRAN) package containing the following shapefiles for the United States of America:
 
--   States (last updated in 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip>)
--   Congressional District Boundaries (last updated in 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip>)
--   Counties (last updated in 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip>)
+-   States (last updated in <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip>, 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip>, 2016)
+-   Congressional District Boundaries (last updated in <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip>, 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip>, 2016)
+-   Counties (last updated in <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip>, 2016, and sourced from <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip>, 2016)
 
 All shapefiles include a column called `contiguous.united.states` which allows the dataset to be restricted to the contiguous US very simply:
 
@@ -59,16 +59,6 @@ The actual shapefiles (borders) included in this package are from the US Census 
 
 ``` r
 shapefile_details
-#> # A tibble: 6 x 3
-#>                             description  year
-#>                                   <chr> <int>
-#> 1 Details about congressional districts  2016
-#> 2                Details about counties  2016
-#> 3                  Details about states  2016
-#> 4 Shapefile for congressional districts  2016
-#> 5                Shapefile for counties  2016
-#> 6                  Shapefile for states  2016
-#> # ... with 1 more variables: url <chr>
 ```
 
 License

@@ -21,12 +21,13 @@ knitr::opts_chunk$set(
 [![Travis-CI Build Status](https://travis-ci.org/martinjhnhadley/statesRcontiguous.svg?branch=master)](https://travis-ci.org/martinjhnhadley/statesRcontiguous)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/statesRcontiguous)](https://cran.r-project.org/package=statesRcontiguous)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![](http://cranlogs.r-pkg.org/badges/statesRcontiguous)](http://cran.rstudio.com/web/packages/statesRcontiguous/index.html)
 
 statesRcontiguous provides a tiny (small enough for CRAN) package containing the following shapefiles for the United States of America:
 
-- States (last updated in `r params$states_data_file$year`, and sourced from `r params$states_data_file$url`)
-- Congressional District Boundaries (last updated in `r params$congressional_districts_data_file$year`, and sourced from `r params$congressional_districts_data_file$url`)
-- Counties (last updated in `r params$counties_data_file$year`, and sourced from `r params$counties_data_file$url`)
+- States (last updated in `r params$states_data_file`, and sourced from `r params$states_data_file`)
+- Congressional District Boundaries (last updated in `r params$congressional_districts_data_file`, and sourced from `r params$congressional_districts_data_file`)
+- Counties (last updated in `r params$counties_data_file`, and sourced from `r params$counties_data_file`)
 
 All shapefiles include a column called `contiguous.united.states` which allows the dataset to be restricted to the contiguous US very simply:
 
@@ -70,7 +71,7 @@ By providing a small utility package with these shapefiles in, researchers can e
 
 The actual shapefiles (borders) included in this package are from the US Census website, do note that they'd been augmented with additional data from other sources which are detailed in the following table
 
-```{r}
+```{r, eval =FALSE}
 shapefile_details
 ```
 
