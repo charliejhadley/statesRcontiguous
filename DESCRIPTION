@@ -23,11 +23,11 @@ VignetteBuilder:
     knitr
 Depends:
     R (>= 3.1.2),
-    sf,
-    tibble
-Imports:
+    sf
+Imports: 
     magrittr,
-    dplyr
+    tibble
 Suggests: knitr,
     rmarkdown,
+    dplyr,
     leaflet
