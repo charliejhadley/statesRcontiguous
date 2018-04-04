@@ -20,7 +20,7 @@ This package provides three different shapefiles for the United States of Americ
 
 The `sf` objects contain a column called `contiguous.united.states` which allows us to restrict ourselves to only the contiguous US. This is how we might visualise the congressional districts of the contiguous US with leaflet:
 
-```{r, eval=FALSE, include=TRUE}
+```{r, eval=TRUE, include=TRUE}
 library("statesRcontiguous")
 library("tidyverse")
 library("leaflet")
