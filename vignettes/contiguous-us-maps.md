@@ -1,7 +1,7 @@
 ---
 title: "Contiguous US Maps"
 author: "Martin John Hadley"
-date: "2017-08-07"
+date: "2018-04-04"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::knitr}
@@ -46,8 +46,8 @@ knitr::kable(shapefile_details)
 |description                           | year|url                                                                      |
 |:-------------------------------------|----:|:------------------------------------------------------------------------|
 |Details about congressional districts | 2016|https://www2.census.gov/geo/tiger/TIGER2016/CD/tl_2016_us_cd115.zip      |
-|Details about counties                | 2016|https://www2.census.gov/geo/tiger/TIGER2016/COUNTY/tl_2016_us_county.zip |
-|Details about states                  | 2016|https://www2.census.gov/geo/tiger/TIGER2016/STATE/tl_2016_us_state.zip   |
+|Details about counties                | 2017|https://www2.census.gov/geo/tiger/TIGER2017/COUNTY/tl_2017_us_county.zip |
+|Details about states                  | 2017|https://www2.census.gov/geo/tiger/TIGER2017/STATE/tl_2017_us_state.zip   |
 |Shapefile for congressional districts | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip   |
 |Shapefile for counties                | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip  |
 |Shapefile for states                  | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip   |
