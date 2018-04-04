@@ -22,7 +22,7 @@ The `sf` objects contain a column called `contiguous.united.states` which allows
 
 ```{r, eval=TRUE, include=TRUE}
 library("statesRcontiguous")
-library("tidyverse")
+library("dplyr")
 library("leaflet")
 shp_contiguous_us_congressional_districts <- shp_all_us_congressional_districts %>%
   filter(contiguous.united.states)
