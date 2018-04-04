@@ -2,6 +2,7 @@ Package: statesRcontiguous
 Type: Package
 Title: Shapefiles for the Contiguous United States of America
 Version: 0.2.0
+Author: person("Martin", "Hadley", email = "martinjohnhadley@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-3039-6849"))
 Maintainer: Martin Hadley <martinjohnhadley@gmail.com>
 Description: Data package containing shapefiles for the US that may easily be restricted to only
     the contiguous US. Shapefiles are provided for; states, congressional districts and counties.
