@@ -19,11 +19,18 @@ knitr::opts_chunk$set(
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![](http://cranlogs.r-pkg.org/badges/statesRcontiguous)](http://cran.rstudio.com/web/packages/statesRcontiguous/index.html)
 
-statesRcontiguous provides a tiny (small enough for CRAN) package containing the following shapefiles for the United States of America:
+statesRcontiguous provides a tiny (small enough for CRAN) package containing shapefiles for the following subdivisions of the United States of America:
 
-- States (last updated in `r params$states_data_file`, and sourced from `r params$states_data_file`)
-- Congressional District Boundaries (last updated in `r params$congressional_districts_data_file`, and sourced from `r params$congressional_districts_data_file`)
-- Counties (last updated in `r params$counties_data_file`, and sourced from `r params$counties_data_file`)
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library("DT")
+library("statesRcontiguous")
+library("tidyverse")
+statesrcontiguous_shapefile_details %>%
+  select(-path) %>%
+  mutate(source = paste0("<a href='", "' target='_blank'>", "US Census Bureau", "</a>")) %>%
+  knitr::kable(col.names = c("Subdivision of the US", "Shapefile/Info", "Year Updated", "Source"))
+```
+
 
 All shapefiles include a column called `contiguous.united.states` which allows the dataset to be restricted to the contiguous US very simply:
 
