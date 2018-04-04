@@ -1,6 +1,34 @@
 library("sf")
 library("tidyverse")
 
+get_year <- function(path, ...){
+  read_csv(path) %>%
+    select(year) %>%
+    .[[1]]
+}
+
+get_url <- function(path, ...){
+  read_csv(path) %>%
+    select(url) %>%
+    .[[1]]
+}
+
+
+statesrcontiguous_shapefile_details <- tribble(
+  ~path, ~subdivision, ~type,
+  "data-raw/current_states_shapefile_url.csv", "States", "Shapefile",
+  "data-raw/current_states_info_url.csv", "States", "Info",
+  "data-raw/current_congressional_districts_shapefile_url.csv", "Congressional Districts", "Shapefile",
+  "data-raw/current_congressional_districts_info_url.csv", "Congressional Districts", "Info",
+  "data-raw/current_counties_shapefile_url.csv", "Counties", "Shapefile",
+  "data-raw/current_counties_info_url.csv", "Counties", "Info"
+) %>%
+  mutate(year = pmap_int(., get_year),
+         source = pmap_chr(., get_url))
+save(statesrcontiguous_shapefile_details, file = "data/statesrcontiguous_shapefile_details.rdata")
+
+# ===== Deprecated shapefile details object ====
+
 detailed_congressional_districts_url <- read_csv("data-raw/current_congressional_districts_info_url.csv") %>%
   mutate(description = "Details about congressional districts")
 detailed_counties_url <- read_csv("data-raw/current_counties_info_url.csv") %>%
