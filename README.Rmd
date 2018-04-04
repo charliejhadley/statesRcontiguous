@@ -1,14 +1,10 @@
 ---
 output: github_document
-params: 
-  states_data_file: "terrible-default"
-  congressional_districts_data_file: "terrible-default"
-  counties_data_file: "terrible-default"
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo=FALSE}
+```{r echo=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
