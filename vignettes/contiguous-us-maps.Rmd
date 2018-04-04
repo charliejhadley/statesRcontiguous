@@ -39,7 +39,7 @@ All of the shapefiles in this package are from the US Census website - https://w
 The explicit urls for the shapefiles are available here:
 
 ```{r}
-knitr::kable(shapefile_details)
+knitr::kable(statesrcontiguous_shapefile_details)
 ```
 
 
