@@ -9,3 +9,5 @@ rmarkdown::render("README.Rmd", params = list(
   congressional_districts_data_file = congressional_districts_data_file,
   counties_data_file = counties_data_file
 ))
+
+unlink("README.html")
