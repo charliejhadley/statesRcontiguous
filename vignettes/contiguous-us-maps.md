@@ -20,7 +20,15 @@ The `sf` objects contain a column called `contiguous.united.states` which allows
 
 ```r
 library("statesRcontiguous")
-library("tidyverse")
+library("dplyr")
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 library("leaflet")
 shp_contiguous_us_congressional_districts <- shp_all_us_congressional_districts %>%
   filter(contiguous.united.states)
@@ -28,7 +36,11 @@ shp_contiguous_us_congressional_districts %>%
   leaflet() %>%
   addTiles() %>%
   addPolygons(weight = 1)
+#> Warning: sf layer has inconsistent datum (+proj=longlat +datum=NAD83 +no_defs).
+#> Need '+proj=longlat +datum=WGS84'
 ```
+
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 # Where are the shapefiles from?
 
@@ -38,18 +50,18 @@ The explicit urls for the shapefiles are available here:
 
 
 ```r
-knitr::kable(shapefile_details)
+knitr::kable(statesrcontiguous_shapefile_details)
 ```
 
 
 
-|description                           | year|url                                                                      |
-|:-------------------------------------|----:|:------------------------------------------------------------------------|
-|Details about congressional districts | 2016|https://www2.census.gov/geo/tiger/TIGER2016/CD/tl_2016_us_cd115.zip      |
-|Details about counties                | 2017|https://www2.census.gov/geo/tiger/TIGER2017/COUNTY/tl_2017_us_county.zip |
-|Details about states                  | 2017|https://www2.census.gov/geo/tiger/TIGER2017/STATE/tl_2017_us_state.zip   |
-|Shapefile for congressional districts | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip   |
-|Shapefile for counties                | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip  |
-|Shapefile for states                  | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip   |
+|path                                                       |subdivision             |type      | year|source                                                                   |
+|:----------------------------------------------------------|:-----------------------|:---------|----:|:------------------------------------------------------------------------|
+|data-raw/current_states_shapefile_url.csv                  |States                  |Shapefile | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip   |
+|data-raw/current_states_info_url.csv                       |States                  |Info      | 2017|https://www2.census.gov/geo/tiger/TIGER2017/STATE/tl_2017_us_state.zip   |
+|data-raw/current_congressional_districts_shapefile_url.csv |Congressional Districts |Shapefile | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip   |
+|data-raw/current_congressional_districts_info_url.csv      |Congressional Districts |Info      | 2017|https://www2.census.gov/geo/tiger/TIGER2017/CD/tl_2017_us_cd115.zip      |
+|data-raw/current_counties_shapefile_url.csv                |Counties                |Shapefile | 2016|http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip  |
+|data-raw/current_counties_info_url.csv                     |Counties                |Info      | 2017|https://www2.census.gov/geo/tiger/TIGER2017/COUNTY/tl_2017_us_county.zip |
 
 

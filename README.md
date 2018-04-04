@@ -12,23 +12,34 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 [![](http://cranlogs.r-pkg.org/badges/statesRcontiguous)](http://cran.rstudio.com/web/packages/statesRcontiguous/index.html)
 
 statesRcontiguous provides a tiny (small enough for CRAN) package
-containing the following shapefiles for the United States of America:
+containing shapefiles for the following subdivisions of the United
+States of
+America:
 
-  - States (last updated in
-    <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip>,
-    2016, and sourced from
-    <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip>,
-    2016)
-  - Congressional District Boundaries (last updated in
-    <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip>,
-    2016, and sourced from
-    <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_cd115_20m.zip>,
-    2016)
-  - Counties (last updated in
-    <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip>,
-    2016, and sourced from
-    <http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_20m.zip>,
-    2016)
+| Subdivision of the US   | Shapefile/Info | Year Updated | Source                                          |
+| :---------------------- | :------------- | -----------: | :---------------------------------------------- |
+| States                  | Shapefile      |         2016 | <a href='' target='_blank'>US Census Bureau</a> |
+| States                  | Info           |         2017 | <a href='' target='_blank'>US Census Bureau</a> |
+| Congressional Districts | Shapefile      |         2016 | <a href='' target='_blank'>US Census Bureau</a> |
+| Congressional Districts | Info           |         2017 | <a href='' target='_blank'>US Census Bureau</a> |
+| Counties                | Shapefile      |         2016 | <a href='' target='_blank'>US Census Bureau</a> |
+| Counties                | Info           |         2017 | <a href='' target='_blank'>US Census Bureau</a> |
+
+The sources of the data in the package (and the year they were last
+updated) is available from the following object:
+
+``` r
+statesRcontiguous::statesrcontiguous_shapefile_details
+#> # A tibble: 6 x 5
+#>   path                 subdivision    type    year source                 
+#>   <chr>                <chr>          <chr>  <int> <chr>                  
+#> 1 data-raw/current_st… States         Shape…  2016 http://www2.census.gov…
+#> 2 data-raw/current_st… States         Info    2017 https://www2.census.go…
+#> 3 data-raw/current_co… Congressional… Shape…  2016 http://www2.census.gov…
+#> 4 data-raw/current_co… Congressional… Info    2017 https://www2.census.go…
+#> 5 data-raw/current_co… Counties       Shape…  2016 http://www2.census.gov…
+#> 6 data-raw/current_co… Counties       Info    2017 https://www2.census.go…
+```
 
 All shapefiles include a column called `contiguous.united.states` which
 allows the dataset to be restricted to the contiguous US very simply:
@@ -41,7 +52,11 @@ shp_contiguous_states <- shp_all_us_states %>%
 leaflet(shp_contiguous_states) %>%
   addTiles() %>%
   addPolygons()
+#> Warning: sf layer has inconsistent datum (+proj=longlat +datum=NAD83 +no_defs).
+#> Need '+proj=longlat +datum=WGS84'
 ```
+
+![](README-leaflet-example-1.png)<!-- -->
 
 # Installation
 
@@ -80,16 +95,6 @@ instead data must be loaded from external DOI-issuing repositories like
 
 By providing a small utility package with these shapefiles in,
 researchers can easily create choropleth of the US.
-
-# Data Source
-
-The actual shapefiles (borders) included in this package are from the US
-Census website, do note that they’d been augmented with additional data
-from other sources which are detailed in the following table
-
-``` r
-shapefile_details
-```
 
 # License
 
