@@ -75,15 +75,6 @@ This package was designed for the University of Oxford's [Interactive Data Netwo
 
 By providing a small utility package with these shapefiles in, researchers can easily create choropleth of the US.
 
-# Data Source
-
-The actual shapefiles (borders) included in this package are from the US Census website, do note that they'd been augmented with additional data from other sources which are detailed in the following table
-
-```{r, eval =FALSE}
-shapefile_details
-```
-
-
 # License
 
 This package includes shapefiles from the US Census Bureau. All shapefiles provided by the US Census Bureau are TIGER/Line shapefiles and are offered to the public free of charge, see [TIGER/Line Shapefil Technical Documentation](http://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2016/TGRSHP2016_TechDoc.pdf) for details.
