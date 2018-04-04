@@ -39,7 +39,7 @@ statesRcontiguous::statesrcontiguous_shapefile_details
 
 All shapefiles include a column called `contiguous.united.states` which allows the dataset to be restricted to the contiguous US very simply:
 
-```{r leaflet-example, eval=FALSE}
+```{r leaflet-example, eval=TRUE}
 library(statesRcontiguous)
 library(leaflet)
 shp_contiguous_states <- shp_all_us_states %>%
