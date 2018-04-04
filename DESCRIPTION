@@ -32,4 +32,3 @@ Suggests: knitr,
     rmarkdown,
     leaflet,
     covr
-License: MIT + file LICENSE
