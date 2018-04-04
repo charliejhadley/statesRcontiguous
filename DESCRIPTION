@@ -30,7 +30,6 @@ Imports:
     dplyr
 Suggests: knitr,
     rmarkdown,
-    tidyverse,
     leaflet,
     covr
 License: MIT + file LICENSE
