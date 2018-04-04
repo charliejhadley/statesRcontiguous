@@ -31,6 +31,11 @@ statesrcontiguous_shapefile_details %>%
   knitr::kable(col.names = c("Subdivision of the US", "Shapefile/Info", "Year Updated", "Source"))
 ```
 
+The sources of the data in the package (and the year they were last updated) is available from the following object:
+
+```{r, eval=TRUE}
+statesRcontiguous::statesrcontiguous_shapefile_details
+```
 
 All shapefiles include a column called `contiguous.united.states` which allows the dataset to be restricted to the contiguous US very simply:
 
