@@ -95,14 +95,15 @@
 
 #' Details of the shapefiles included in this package.
 #'
-#' A tibble containing the url, year and description of all shapefiles used to create the datasets included in this package
+#' A tibble containing the url, year and description of all shapefiles and additional datasets used to create the objects included in this package
 #'
 #' @format A tibble containing 6 rows and 3 variables.
 #' \describe{
-#'     \item{description}{What is this shapefile used for?}
+#'     \item{path}{Internal package path for file containing url and update year}
+#'     \item{subdivision}{Which subdivision does this data pertain to; States, Congressional Districts or Counties}
 #'     \item{year}{Year of observation (i.e. congressional districts for 2016)}
-#'     \item{url}{URL for the shapefile zip file}
+#'     \item{source}{URL for the data}
 #' }
-#' @source \url{http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_20m.zip}
-"shapefile_details"
+#' @source \url{http://www2.census.gov}
+"statesrcontiguous_shapefile_details"
 
