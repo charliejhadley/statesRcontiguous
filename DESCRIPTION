@@ -30,5 +30,4 @@ Imports:
     dplyr
 Suggests: knitr,
     rmarkdown,
-    leaflet,
-    covr
+    leaflet
