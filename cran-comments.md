@@ -7,13 +7,19 @@ This is a resubmission, apologies for forgetting resubmission notes previously. 
 
 ## Release summary
 
-This is the first release of a package designed to provide a self-contained set of CRAN-hosted shapefiles for the following properties of the US; states, congressional districts, counties. Data processing is self-contained within the /data-raw directory and a parameterised README.Rmd file auto includes the details of the latest version of the shapefiles in the readme. Note that the shapefiles have been augmented with data from additional sources to make it easier for users to subset the shapefiles to concern only the contiguous US.
+This minor release was precipitated by an email on behalf of tidyverse package maintainer noting that the tidyverse should be removed from Suggests. The opportunity was also taken to update the package to enable tibble printing for the exported objects, and the internal package infrastructure for keeping track of data sources has been overhauled - note that this has led to the deprecation of `shapefile_details`.
 
 ## Test environments
 
-* local OS X install, R 3.4.1
+* local OS X install, R 3.4.4
 * Ubuntu 14.04.5 LTS (on travis-ci), R 3.4.1, R 3.3.3, R-devel.
 * win-builder (devel)
+
+### R-devel Failure
+
+Package failed to build on R-devel due to the following error:
+
+Error: package ‘devtools’ was installed by an R version with different internals; it needs to be reinstalled for use with this R version
 
 ## R CMD check results
 
