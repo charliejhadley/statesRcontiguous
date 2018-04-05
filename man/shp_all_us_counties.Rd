@@ -7,9 +7,9 @@
 \format{Simple feature collection with 3233 features and 14 fields
 \describe{
   \item{county.name}{County name}
-  \item{county.name.abbreviated}{Abbreviated or commong county name}
+  \item{county.name.abbreviated}{Abbreviated or common county name}
   \item{county.fp}{County unique identifier}
-  \item{county.ns}{GNIS IDfor county}
+  \item{county.ns}{GNIS ID for county}
   \item{state.fips}{State FIP code}
   \item{state.short.name}{Two-character short name for state}
   \item{state.name}{State name}
