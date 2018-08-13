@@ -29,5 +29,4 @@ Imports:
     tibble
 Suggests: knitr,
     rmarkdown,
-    dplyr,
-    leaflet
+    dplyr
