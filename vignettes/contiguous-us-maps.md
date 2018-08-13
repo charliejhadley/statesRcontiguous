@@ -1,12 +1,14 @@
 ---
 title: "Contiguous US Maps"
 author: "Martin John Hadley"
-date: "2018-04-04"
+date: "2018-04-19"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteEngine{knitr::knitr}
   %\VignetteIndexEntry{Title of your vignette}
   %\usepackage[UTF-8]{inputenc}
+  %\VignetteEngine{knitr::knitr}
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -15,7 +17,7 @@ vignette: >
 
 This package provides three different shapefiles for the United States of America, comprising; state boundaries, congressional districts and counties. These are stored as `sf` objects, if you're not familiar with the excellent `sf` approach to geometric features it's highly recommended you glace at the documentation - https://r-spatial.github.io/sf//index.html
 
-The `sf` objects contain a column called `contiguous.united.states` which allows us to restrict ourselves to only the contiguous US. This is how we might visualise the congressional districts of the contiguous US with leaflet:
+The `sf` objects contain a column called `contiguous.united.states` which allows us to restrict ourselves to only the contiguous US. This is how we might visualise the congressional districts of the contiguous US with base R:
 
 
 ```r
@@ -29,15 +31,11 @@ library("dplyr")
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
-library("leaflet")
-shp_contiguous_us_congressional_districts <- shp_all_us_congressional_districts %>%
-  filter(contiguous.united.states)
-shp_contiguous_us_congressional_districts %>%
-  leaflet() %>%
-  addTiles() %>%
-  addPolygons(weight = 1)
-#> Warning: sf layer has inconsistent datum (+proj=longlat +datum=NAD83 +no_defs).
-#> Need '+proj=longlat +datum=WGS84'
+
+shp_all_us_states %>%
+  filter(contiguous.united.states == TRUE) %>%
+  select(geometry) %>%
+  plot()
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
